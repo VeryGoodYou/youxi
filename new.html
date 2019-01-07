@@ -65,10 +65,13 @@
         border-radius: 0;
         background: rgba(0, 0, 0, 0.1);
     }
+    .aa-1{
+        display: none;
+    }
 </style>
 <body>
 
-<div class="inner">
+<!--<div class="inner">
     <div class="innerbox">
         <p style="height:200px;">这是内容111</p>
         <p style="height:400px;">这里是内容222</p>
@@ -85,9 +88,9 @@
     <div class="show">content1</div>
     <div>content2</div>
     <div>content3</div>
-</div>
+</div>-->
 
-<ul class="aa">
+<ul id="aa">
     <li>1111</li>
     <li>222</li>
     <li>3333</li>
@@ -98,7 +101,20 @@
     <li>3</li>
 </ul>
 <script>
-var aa = document.getElementById()
+var aa = document.getElementById('aa');
+var li = document.getElementsByTagName('li');
+var s = document.getElementsByClassName('aa-1');
+for (var i = 0, val = aa.length; i < val; i++) {
+    li[i].index = i;
+    li[i].onclick =function () {
+        for (var j = 0; j < li.length; j++) {
+            li[j].className ="";
+            s[j].style.display = 'none';
+        }
+        this.className = 'Liactive';
+        s[this.index].style.display = "block";
+    }
+}
 
     /*var tabs = document.getElementsByClassName('tab-head')[0].getElementsByTagName('h2'),
         contents = document.getElementsByClassName('tab-content')[0].getElementsByTagName('div');
