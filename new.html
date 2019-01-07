@@ -5,30 +5,121 @@
     <title>Title</title>
 </head>
 <style>
-    .box{
-        width: 50%;
+    h2 {
+        border-top: solid cornflowerblue 1px;
+        border-left: solid cornflowerblue 1px;
+        width: 50px;
+        height: 25px;
+        margin: 0;
         float: left;
-        background: yellow;
+        text-align: center;
     }
-    .box-1{
 
+    .tab-content {
+        border: solid cornflowerblue 1px;
+        width: 152px;
+        height: 100px;
     }
-    .box-2 ul li{
-        float: left;
-        list-style: none;
+
+    .tab-content div{
+        display: none;
+    }
+
+    .selected {
+        background-color: cornflowerblue;
+    }
+
+    .tab-content .show{
+        display: block;
+    }
+
+    .inner{
+        width: 265px;
+        height: 400px;
+        position: absolute;
+        top: 33px;
+        left: 13px;
+        /*cursor: pointer;*/
+        overflow:hidden;
+    }
+    .innerbox{
+        overflow-x: hidden;
+        overflow-y: auto;
+        color: #000;
+        font-size: .7rem;
+        font-family: "\5FAE\8F6F\96C5\9ED1",Helvetica,"黑体",Arial,Tahoma;
+        height: 100%;
+    }
+    /*滚动条样式*/
+    .innerbox::-webkit-scrollbar {/*滚动条整体样式*/
+        width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
+        height: 4px;
+    }
+    .innerbox::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        background: rgba(0,0,0,0.2);
+    }
+    .innerbox::-webkit-scrollbar-track { /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0.1);
     }
 </style>
 <body>
-<div class="box box-1"><img src="images/ho-6.png" alt=""></div>
-<div class="box box-2">
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>45</li>
-        <li>6</li>
-    </ul>
+
+<div class="inner">
+    <div class="innerbox">
+        <p style="height:200px;">这是内容111</p>
+        <p style="height:400px;">这里是内容222</p>
+        <p>这里是内容333</p>
+    </div>
 </div>
+
+<div class="tab-head">
+    <h2 class="selected">1</h2>
+    <h2>2</h2>
+    <h2>3</h2>
+</div>
+<div class="tab-content">
+    <div class="show">content1</div>
+    <div>content2</div>
+    <div>content3</div>
+</div>
+
+<ul class="aa">
+    <li>1111</li>
+    <li>222</li>
+    <li>3333</li>
+</ul>
+<ul class="aa-1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+var aa = document.getElementById()
+
+    /*var tabs = document.getElementsByClassName('tab-head')[0].getElementsByTagName('h2'),
+        contents = document.getElementsByClassName('tab-content')[0].getElementsByTagName('div');
+
+    (function changeTab(tab) {
+        for(var i = 0, len = tabs.length; i < len; i++) {
+            tabs[i].onclick = showTab;
+        }
+    })();
+
+    function showTab() {
+        for(var i = 0, len = tabs.length; i < len; i++) {
+            if(tabs[i] === this) {
+                tabs[i].className = 'selected';
+                contents[i].className = 'show';
+            } else {
+                tabs[i].className = '';
+                contents[i].className = '';
+            }
+        }
+    }*/
+</script>
 </body>
 </html>

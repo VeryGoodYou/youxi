@@ -27,10 +27,22 @@ a{
     width: 80%;
 }
 .box{
-    width: 40%;
+    width: 50%;
     float: left;
 }
-.navbar>.contion>.box-1>a{
+
+.login{
+    float: right;
+}
+.login>li{
+    font-size: 14px;
+    line-height: 47px;
+    margin: 0 14px;
+    position: relative;
+    right: 0;
+    float: left;
+}
+.log{
     font-family: myfont;
     text-decoration: none;
     font-size: 29px;
@@ -40,14 +52,6 @@ a{
 @font-face {
     font-family: myfont;
     src: url("../fonts/font.ttf");
-}
-.login>li{
-    float: left;
-    font-size: 14px;
-    line-height: 47px;
-    margin: 0 14px;
-    position: relative;
-    right: 0;
 }
 .login>li>a{
     text-decoration: none;
@@ -200,6 +204,7 @@ a{
     width: 30px;
     position: relative;
     top: 50%;
+    vertical-align:super;
 }
 .di-1>.hone>a>.hone-1>span{
     position: relative;
@@ -411,20 +416,18 @@ h1{
 }
 .cen{
     margin: auto;
-    width: 970px;
+    width: 760px;
     z-index: 1;
     position: relative;
     top: 20%;
 }
-.text{
-    float: left;
-    width: 44%;
-}
 .txt{
     float: left;
+    width: 54%;
 }
 .ttx{
-    float: right;
+    float: left;
+    width: 46%;
 }
 .txt h3{
     font-size: 24px;
@@ -443,4 +446,244 @@ h1{
 .ttx img{
     width: 406px;
     margin-bottom: 44px;
+}
+/*游戏战役*/
+.ho-10{
+    background: url("../images/ho-10.jpg")no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+    position: relative;
+}
+.ho-10 #zhan{
+    margin-bottom: 57px;
+}
+.ho-10 .yi{
+    background: rgba(255, 172, 0, 0.5);
+    width: 80%;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+    overflow: auto;
+    height: 595px;
+}
+.yi::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+}
+.yi::-webkit-scrollbar-thumb{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #ff008d59;
+}
+.ho-10 .yi h1{
+    color: black;
+    margin-bottom: 30px;
+}
+.yi .gold{
+    color: #000;
+}
+.yi p{
+    margin-bottom: 11px;
+    padding-bottom: 17px;
+}
+/*游戏阵营*/
+.ho-11{
+    background: url("../images/fh_hero-callout-bg_ncsa.png")no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+}
+.menu-1{
+    text-align: center;
+}
+#menu-1{
+    width: 29%;
+}
+.menu-1 #qie{
+    float: left;
+    position: relative;
+    left: 18%;
+}
+.menu-1 #qie li{
+    background: black;
+    border: 2px solid white;
+}
+.menu-1 #qie li a img{
+    width: 100px;
+    height: 126px;
+}
+.menu-1 #qie li a span{
+    display: block;
+    background: #ff0bf7;
+    color: white;
+}
+/*游戏视觉*/
+.ho-12{
+    background: url("../images/bg6.jpg ")no-repeat fixed;
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+}
+#jue{
+    margin-bottom: 6%;
+}
+.mar{
+    width: 242px;
+    margin: auto;
+    padding-bottom: 40px;
+}
+#oul li{
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+#oul li:nth-child(1){
+    border-right: 1px solid #000000;
+}
+#oul li a{
+    color: #732e2e;
+}
+#oul li a:focus{
+    color: black;
+}
+.mar-1{
+    width: 868px;
+    margin: auto;
+    text-align: center;
+}
+#shi{
+    width: 100%;
+}
+#shi-1 li{
+    float: left;
+    margin: 0 37px;
+}
+#shi-1 li a img{
+    width: 142px;
+}
+#div2{
+    display: none;
+}
+#div2 img{
+    width: 200px;
+    border: 2px solid #868686;
+    margin: 0 17px 25px;
+    height: 115px;
+}
+/*footer*/
+.footer{
+    background-color: #000;
+    width: 100%;
+    color: #999999;
+    text-align: center;
+    padding: 30px 0;
+}
+.wsd{
+    padding: 40px 0 20px;
+    border-bottom: solid 1px #404040;
+    border-top: 1px solid #404040;
+    background-color: #000;
+    margin: 0 30px;
+}
+
+#to{
+    width: 100%;
+}
+#to .to-1{
+    width: 225px;
+    line-height: 45px;
+    text-align: center;
+    height: 46px;
+    display: inline-block;
+}
+#to a{
+    display: block;
+    background-color: #404040;
+    color: white;
+}
+.sub{
+    width: 100%;
+    position: relative;
+    display: none;
+}
+.sub li img{
+    width: 100%;
+}
+#to>li:hover > .sub,#to>li:hover > .sub img{
+    display: block;
+}
+/*游戏专区*/
+.link{
+    margin-bottom: 16px;
+}
+.link h2{
+    margin-bottom: 18px;
+}
+.link a{
+    font-size: 12px;
+    color: white;
+    margin: 0 9px;
+}
+.font-link{
+    margin-bottom: 29px;
+}
+.list-ss li{
+    display: inline-block;
+}
+.list-ss li a{
+    color: white;
+}
+.list-ss li a:hover{
+    color: #c7c7c7;
+}
+.style-link p{
+    line-height: 36px;
+}
+@media (max-width: 890px) {
+    .txt{
+        width: 100%;
+    }
+    .ttx{
+        width: 100%;
+    }
+    .ttx img{
+        width: 376px;
+    }
+    #menu-1{
+        width: 60%;
+    }
+    #shi-1 li{
+        margin: 0 16px;
+    }
+    .mar-1{
+        width: 700px;
+    }
+    .login{
+        width: 436px;
+    }
+    .txt p{
+        width: 85%;
+    }
+}
+@media (max-width: 768px) {
+    .box{
+        width: 100%;
+    }
+    .log{
+        display: none;
+    }
+    .login{
+        width: 97%;
+    }
+    .di-1{
+        display: none;
+    }
+    .box-1{
+        padding: 256px 0;
+    }
+    #cen{
+        white-space: nowrap;
+    }
 }
