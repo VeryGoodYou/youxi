@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
     h2 {
         border-top: solid cornflowerblue 1px;
         border-left: solid cornflowerblue 1px;
@@ -13,6 +17,7 @@
         margin: 0;
         float: left;
         text-align: center;
+        opacity: ;
     }
 
     .tab-content {
@@ -68,6 +73,116 @@
     .aa-1{
         display: none;
     }
+    #fa{
+        width: 300px;
+        position: absolute;
+        z-index: 1;
+    }
+    #fa-1 li{
+        background: red;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        float: left;
+        margin: 0 5px;
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+        bottom: 0;
+        z-index: 1;
+    }
+    #fa-1 li img{
+        width: 300px;
+    }
+    .aa{
+        position: relative;
+        z-index: 0;
+    }
+    .aa img{
+        width: 100%;
+        height: 2000px;
+    }
+    .box{
+        width: 300px;
+        position: fixed;
+        z-index: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .pic a img{
+        width: 100%;
+    }
+    .cia{
+        background: #ccc;
+        width: 100%;
+    }
+    .pic a#close{
+        background: red;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+    .hed{
+        display: none!important;
+    }
+    .show{
+        display: block!important;
+    }
+    #guang{
+        width: 100%;
+        text-align: center;
+    }
+    #ddd{
+        height: 500px;
+    }
+    .bg{
+        margin: 0;
+        padding: 0;
+        background: url("images/dj1.jpg")no-repeat 0 0;
+        width: 0;
+        height: 150px;
+        float: left;
+        background-size: cover;
+    }
+    .sho{
+        background: url("images/dj2.jpg")no-repeat 0 0;
+        width: 33px;
+        height: 33px;
+        display: inline-block;
+        float: left;
+    }
+    .hid{
+        background: url("images/dj3.jpg")no-repeat 0 0;
+        width: 23px;
+        height: 150px;
+        float: left;
+    }
+    #mm{
+        width: 150px;
+        height: 150px;
+        background: red;
+        float: left;
+        position: relative;
+        left: -150px;
+    }
+    #shar{
+        width: 100px;
+        height: 100px;
+        background: #1b00ff;
+        position: absolute;
+        left: 150px;
+    }
+    .guang{
+        width: 100%;
+    }
+    .guang img{
+        width: 800px;
+    }
+    #div2{
+        display: none;}
 </style>
 <body>
 
@@ -90,31 +205,123 @@
     <div>content3</div>
 </div>-->
 
-<ul id="aa">
-    <li>1111</li>
-    <li>222</li>
-    <li>3333</li>
-</ul>
-<ul class="aa-1">
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-</ul>
+<!--<div id="guang">
+    <img src="images/dj2.jpg" alt="" id="ddd">
+</div>
+<div class="aa">
+    <img src="images/dj1.jpg" alt="">
+</div>-->
+<!--<div class="box" id="cs">
+    <div class="cia" id="cia">你好！</div>
+    <div class="pic">
+        <a href="#" id="pic"><img src="images/dj4.jpg" alt=""></a>
+        <a href="javascript:void(0);" id="close"></a>
+    </div>
+</div>-->
+<!--<div id="mm"><span id="shar"></span></div>-->
+<div class="ka">
+    <div class="qie">
+        <ul id="qie">
+            <li><a href="javascript:void(0)">1111</a></li>
+            <li><a href="javascript:void(0)">2222</a></li>
+        </ul>
+    </div>
+    <div class="thi">
+        <div class="ac">
+            <ul>
+                <li><a href="javascript:void(0)">3124124</a></li>
+                <li><a href="javascript:void(0)">212412412222</a></li>
+            </ul>
+        </div>
+        <div class="ac" id="div2">
+            <ul>
+                <li><a href="javascript:void(0)">3333333</a></li>
+                <li><a href="javascript:void(0)">4444444</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 <script>
-var aa = document.getElementById('aa');
-var li = document.getElementsByTagName('li');
-var s = document.getElementsByClassName('aa-1');
-for (var i = 0, val = aa.length; i < val; i++) {
-    li[i].index = i;
-    li[i].onclick =function () {
-        for (var j = 0; j < li.length; j++) {
-            li[j].className ="";
-            s[j].style.display = 'none';
+var qie = document.getElementById('qie').getElementsByTagName('li');
+var ac = document.getElementsByClassName('ac');
+for (var i=0,val=qie.length;i<val;i++){
+    qie[i].index = i;
+    qie[i].onclick = function () {
+        for (var j = 0; j < qie.length; j++) {
+            ac[j].style.display = 'none';
         }
-        this.className = 'Liactive';
-        s[this.index].style.display = "block";
+        ac[this.index].style.display = 'block';
     }
 }
+/*window.onload = function () {
+    var mm = document.getElementById('mm');
+    mm.onmouseover = function () {
+        statia(10,0);
+    }
+    mm.onmouseout = function () {
+        statia(-10,-150);
+    }
+}
+var s = 10;
+var timer = null;
+function statia(speed,iTarget) {
+    var mm = document.getElementById('mm');
+    timer = setInterval(function () {
+        if (mm.offsetLeft == iTarget) {
+            clearInterval(timer);
+        } else {
+            mm.style.left = mm.offsetLeft + speed + 'px';
+        }
+    }, 30)
+}*/
+/*var $ = function(id){
+    return document.getElementById(id);
+}*/
+
+/*var h=0;
+var maxH = $('ddd').height;
+    function don() {
+        $('guang').style.height = h+'px';
+        $('guang').style.display = 'block';
+        if (h < maxH) {
+            h+=5;
+
+            setTimeout(don,30);
+        }else{
+
+            setTimeout(add,3000);
+        }
+    }
+    function add(){
+        if (h > 0) {
+            h-=5;
+            $('guang').style.height = h+'px';
+            setTimeout(add,30);
+        }
+    }
+    setTimeout(don,1000);*/
+
+
+
+/*        $('close').onclick = function () {
+            $('pic').className = 'hed';
+            $('close').className = 'hed';
+        }
+        $('cia').onmouseover = function () {
+            $('pic').className = 'show';
+            $('close').className = 'show';
+        }*/
+
+
+
+/*but.onclick = function () {
+    for (var i = 0,d=ss; i < d; i++) {
+        ss+='<img src="images/'+i+'.png">'
+        /!*document.write('<img src="images/'+d+'">');*!/
+    }
+    dv.innerHTML = ss;
+}*/
+
 
     /*var tabs = document.getElementsByClassName('tab-head')[0].getElementsByTagName('h2'),
         contents = document.getElementsByClassName('tab-content')[0].getElementsByTagName('div');
