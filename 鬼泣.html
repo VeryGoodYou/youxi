@@ -25,14 +25,14 @@
                     <h3>登录</h3>
                 <div class="a">
                     <!--<label>账号：</label>-->
-                    <input type="text" class="in-1" placeholder="请输入账号">
+                    <input type="text" class="in-1" id="go" placeholder="请输入账号">
                 </div>
                 <div class="a">
                     <!--<label>密码：</label>-->
-                    <input type="password" class="in-1" placeholder="请输入密码">
+                    <input type="password" class="in-1" id="pwd" placeholder="请输入密码">
                 </div>
                 <div class="a">
-                    <button type="button">登录</button>
+                    <button id="btn" type="button">登录</button>
                 </div>
                 <div class="a">
                     <div class="hr"></div>
@@ -48,26 +48,133 @@
             <div class="flrg-1">
                 <h3>注册</h3>
                 <div class="a">
-                    <input type="text" class="in-1" placeholder="您的用户名">
+                    <input type="text" id="names" class="in-1" placeholder="您的用户名">
                 </div>
                 <div class="a">
-                    <input type="password" class="in-1" placeholder="输入密码">
+                    <input type="password" id="opw" class="in-1" placeholder="输入密码">
                 </div>
                 <div class="a">
-                    <input type="password" class="in-1" placeholder="再次确认密码">
+                    <input type="password" id="opw-1" class="in-1" placeholder="再次确认密码">
                 </div>
                 <div class="a">
-                    <input type="text" class="in-1" placeholder="输入手机号码">
+                    <input type="text" class="in-1" id="phone" placeholder="输入手机号码">
                 </div>
                 <div class="a">
-                    <input type="email" class="in-1" placeholder="输入邮箱地址">
+                    <input type="email" class="in-1" id="email" placeholder="输入邮箱地址">
                 </div>
                 <div class="a">
-                    <button type="button">注册</button>
+                    <button id="sub" type="button">注册</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<script src="js/style.js"></script>
+<script>
+    /*验证登录*/
+    var go = document.getElementById('go');
+    var pwd = document.getElementById('pwd');
+    var btn = document.getElementById('btn');
+    var gg = true;
+    btn.onclick = function () {
+        var reg = /^[a-zA-Z]{1,3}\d{6}$/;
+        var ogo = go.value;
+        var opwd = pwd.value;
+
+        if (ogo == '') {
+            alert('账号不能为空');
+            gg = false;
+            return false;
+        }
+        if (!reg.test(ogo)) {
+            alert('用户名格式错误');
+            gg = false;
+            return false;
+        }
+        if (opwd == '') {
+            alert('密码不能为空');
+            gg = false;
+            return false;
+        }
+        if (!reg.test(opwd)) {
+            alert('密码格式错误');
+            gg = false;
+            return false;
+        }
+    }
+    /*注册验证*/
+    var names = document.getElementById('names');/*账号*/
+    var bpwd = document.getElementById('opw');  /*密码*/
+    var bpd = document.getElementById('opw-1'); /*确认密码*/
+    var phone = document.getElementById('phone');/*手机*/
+    var email = document.getElementById('email');/*邮箱*/
+    var sub = document.getElementById('sub');/*注册*/
+    var kk = true;
+    sub.onclick = function () {
+        var regg = /^[a-zA-Z]{1,3}\d{6,10}$/;/*验证账号、密码*/
+        var ophone = /^1\d{10}$/;/*手机*/
+        var oemail = /^[a-zA-Z]+@[a-zA-Z]|\d\.[a-zA-Z]{2,4}$/;/*验证邮箱*/
+        var oames = names.value;
+        var opwdw = bpwd.value;
+        var obpd = bpd.value;
+        var ophoe = phone.value;
+        var oema = email.value;
+        /*账号验证*/
+        if (oames == '') {
+            alert('用户名不能为空');
+            kk = false;
+            return false;
+        }
+        if (!regg.test(oames)) {
+            alert('用户名格式错误');
+            kk = false;
+            return false;
+        }
+        /*密码验证*/
+        if (opwdw == '') {
+            alert('密码不能为空');
+            kk = false;
+            return false;
+        }
+        if (!regg.test(opwdw)) {
+            alert('密码不能有特殊符号');
+            kk = false;
+            return false;
+        }
+        /*新密码*/
+        if (obpd == '') {
+            alert('新密码不能为空');
+            kk = false;
+            return false;
+        }
+        if (!regg.test(obpd)) {
+            alert('新密码格式错误');
+            kk = false;
+            return false;
+        }
+        /*手机验证*/
+        if (ophoe == '') {
+            alert('手机不能为空');
+            kk = false;
+            return false;
+        }
+        if (!ophone.test(ophoe)) {
+            alert('手机格式错误');
+            kk = false;
+            return false;
+        }
+        /*邮箱*/
+        if (oema == '') {
+            alert('邮箱不能为空');
+            kk = false;
+            return false;
+        }
+        if (!oemail.test(oema)) {
+            alert('邮箱格式错误');
+            kk = false;
+            return false;
+        }
+    }
+</script>
 </body>
 </html>

@@ -80,3 +80,4 @@ for (var q = 0; q < sub.length; q++) {
         window.open(this.src);
     }
 }
+
