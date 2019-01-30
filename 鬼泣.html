@@ -101,6 +101,7 @@
             gg = false;
             return false;
         }
+        alert('登陆成功');
     }
     /*注册验证*/
     var names = document.getElementById('names');/*账号*/
@@ -152,6 +153,12 @@
             kk = false;
             return false;
         }
+        /*两次密码是否相同验证*/
+        if (opwdw != obpd) {
+            alert('两次密码不同');
+            kk = false;
+            return false;
+        }
         /*手机验证*/
         if (ophoe == '') {
             alert('手机不能为空');
@@ -174,6 +181,7 @@
             kk = false;
             return false;
         }
+        alert('注册成功');
     }
 </script>
 </body>

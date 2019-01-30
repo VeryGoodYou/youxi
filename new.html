@@ -211,7 +211,6 @@
     <button type="button" id="input1">+</button>
 </p>
 
-
 <!--<div class="inner">
     <div class="innerbox">
         <p style="height:200px;">这是内容111</p>
@@ -315,23 +314,47 @@
         daw
         <button class="btn" id="ddddc" type="button">dd</button></li>
 </ul>
-
 <input type="text" id="ww">
-<button id="bbtn">111</button>
-<script>
-    var bb = document.getElementById('ww');
-    var bbtn = document.getElementById('bbtn');
+<button id="bbtn">添加</button>
+<div id="mm">
 
-    bbtn.onclick = function () {
-        var reg = /^1\d{10}$/;
-        var str = bb.value;
-        var ss = reg.test(str);
-        if (ss) {
-            document.write('手机匹配成功');
-        }else{
-            document.write('匹配失败');
+</div>
+<script>
+    var ww = document.getElementById('ww');
+    var btn = document.getElementById('bbtn');
+    var mm = document.getElementById('mm');
+    btn.onclick = function () {
+        var wow = ww.value;
+        if (wow == '') {
+            alert('不能为空');
+            return;
+            mm.innerHTML = '<p>'+(mm+1)+'</p>'+
         }
     }
+
+
+
+
+   /*var otext = document.getElementById('ww');
+   var btn = document.getElementById('bbtn');
+   btn.onclick = function () {
+       /!*匹配任意数字*!/
+       /!*var reg = /\d/;*!/
+       /!*除了数字都能匹配
+       var reg = /\D/;*!/
+       /!*除了汉字都能匹配*!/
+       var reg = /1\d{10,}/;
+       var otex = otext.value;
+       if (otex == '') {
+           alert('输入框不能为空')
+       }
+       if (!reg.test(otex)) {
+           alert('出错')
+       }
+   }*/
+
+
+
     /*匹配QQ*/
     /*var sc = /^[1-9]\d{4,10}$/;
     var scc = '1984898516';
